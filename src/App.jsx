@@ -48,22 +48,42 @@ function App() {
       </main>
 
       <footer style={{ padding: '60px 0', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--secondary)' }}>
+        <style>
+          {`
+          @media (max-width: 400px) {
+            .footer-social { 
+              flex-direction: column !important; 
+              gap: 1.5rem !important; 
+            }
+            .footer-social span { display: none !important; }
+          }
+          `}
+        </style>
         <div className="container">
-          <div style={{ marginBottom: '3rem', display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+          <div className="footer-social" style={{
+            marginBottom: '3rem',
+            display: 'flex',
+            gap: 'clamp(1rem, 5vw, 2.5rem)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            padding: '0 1rem'
+          }}>
             <a href="https://web.facebook.com/CreamyCreations1808" target="_blank" rel="noopener noreferrer" className="uppercase" style={{
               color: 'var(--accent)',
-              fontSize: '0.7rem',
+              fontSize: 'clamp(0.65rem, 2vw, 0.75rem)',
               fontWeight: '700',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              letterSpacing: '1px'
             }}>
               Facebook
             </a>
-            <span style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
-            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: '0.7rem', fontWeight: '700' }}>Instagram</a>
-            <span style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
-            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: '0.7rem', fontWeight: '700' }}>Twitter</a>
+            <span style={{ color: 'rgba(255,255,255,0.1)', display: 'inline-block' }}>|</span>
+            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: '700', letterSpacing: '1px' }}>Instagram</a>
+            <span style={{ color: 'rgba(255,255,255,0.1)', display: 'inline-block' }}>|</span>
+            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: '700', letterSpacing: '1px' }}>Twitter</a>
           </div>
-          <p style={{ color: '#444', fontSize: '0.7rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '2px' }}>
+          <p style={{ color: '#444', fontSize: '0.65rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '2px', padding: '0 1rem' }}>
             &copy; 2026 Creamy Creation & Creamy Cafe. All rights reserved.
           </p>
         </div>

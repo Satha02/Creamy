@@ -31,7 +31,13 @@ const Header = () => {
             borderBottom: isScrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent'
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: '1.2rem', fontWeight: '900', letterSpacing: '3px', textTransform: 'uppercase', zIndex: '2001' }}>
+                <div style={{
+                    fontSize: 'clamp(0.9rem, 4vw, 1.2rem)', // Smaller on mobile to prevent overflow
+                    fontWeight: '900',
+                    letterSpacing: 'clamp(1px, 1vw, 3px)',
+                    textTransform: 'uppercase',
+                    zIndex: '2001'
+                }}>
                     Creamy <span style={{ color: 'var(--accent)' }}>Creations</span>
                 </div>
 
@@ -55,33 +61,34 @@ const Header = () => {
                         background: 'transparent',
                         border: 'none',
                         cursor: 'pointer',
-                        padding: '10px',
+                        padding: '8px', // Reduced padding
                         zIndex: '2001',
                         flexDirection: 'column',
-                        gap: '6px'
+                        gap: '5px', // Reduced gap
+                        alignSelf: 'center'
                     }}
                     className="mobile-toggle"
                 >
                     <div style={{
-                        width: '25px',
-                        height: '2px',
+                        width: '22px', // Slightly smaller
+                        height: '1.5px', // Refined thickness
                         background: '#fff',
                         transition: '0.3s',
-                        transform: isMenuOpen ? 'rotate(45deg) translate(6px, 6px)' : 'none'
+                        transform: isMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
                     }}></div>
                     <div style={{
-                        width: '25px',
-                        height: '2px',
+                        width: '22px',
+                        height: '1.5px',
                         background: '#fff',
                         transition: '0.3s',
                         opacity: isMenuOpen ? '0' : '1'
                     }}></div>
                     <div style={{
-                        width: '25px',
-                        height: '2px',
+                        width: '22px',
+                        height: '1.5px',
                         background: '#fff',
                         transition: '0.3s',
-                        transform: isMenuOpen ? 'rotate(-45deg) translate(5px, -6px)' : 'none'
+                        transform: isMenuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'
                     }}></div>
                 </button>
 

@@ -154,6 +154,14 @@ button {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .container {
+    padding: 0 var(--container-padding);
+  }
+
   h1 {
     font-size: 2.2rem !important;
   }
