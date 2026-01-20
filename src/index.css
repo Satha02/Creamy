@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --primary: #5d3a2e;
+  /* Rich reddish-brown from reference */
+  --secondary: #1a1110;
+  /* Deep coffee background */
+  --accent: #c8a97e;
+  /* Beige/Cream accent */
+  --text-main: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.7);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  --font-main: 'Montserrat', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--secondary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, var(--accent), #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.btn {
+  padding: 0.8rem 2.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+}
+
+/* Responsiveness Utilities */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.8rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .container {
+    padding: 0 var(--container-padding);
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  /* Header mobile */
+  header {
+    padding: 1.5rem 0 !important;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  nav {
+    gap: 1.5rem !important;
+  }
+
+  /* Menu grid mobile */
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  nav a {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
