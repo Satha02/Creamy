@@ -50,10 +50,10 @@ function App() {
       <footer style={{ padding: '60px 0', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--secondary)' }}>
         <style>
           {`
-          @media (max-width: 400px) {
+          @media (max-width: 600px) {
             .footer-social { 
               flex-direction: column !important; 
-              gap: 1.5rem !important; 
+              gap: 1.2rem !important; 
             }
             .footer-social span { display: none !important; }
           }
