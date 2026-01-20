@@ -159,7 +159,7 @@ button {
   }
 
   .container {
-    padding: 0 var(--container-padding) !important;
+    padding: 0 1.25rem !important;
   }
 
   h1 {

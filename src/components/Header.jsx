@@ -32,9 +32,9 @@ const Header = () => {
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{
-                    fontSize: 'clamp(0.9rem, 4vw, 1.2rem)', // Smaller on mobile to prevent overflow
+                    fontSize: 'clamp(0.8rem, 3.8vw, 1.2rem)', // Even smaller on ultra-mobile
                     fontWeight: '900',
-                    letterSpacing: 'clamp(1px, 1vw, 3px)',
+                    letterSpacing: 'clamp(0.5px, 1vw, 2px)', // Tighter tracking on mobile
                     textTransform: 'uppercase',
                     zIndex: '2001'
                 }}>
