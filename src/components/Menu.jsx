@@ -17,15 +17,24 @@ const Menu = () => {
                 </div>
 
                 {/* Tabs */}
-                <div style={{
+                <div className="menu-tabs" style={{
                     display: 'flex',
-                    gap: '2rem',
+                    gap: '2.5rem',
                     overflowX: 'auto',
-                    paddingBottom: '2rem',
+                    padding: '0 1rem 1.5rem',
                     marginBottom: '4rem',
-                    justifyContent: 'center',
-                    borderBottom: '1px solid var(--glass-border)'
+                    borderBottom: '1px solid var(--glass-border)',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
                 }}>
+                    <style>
+                        {`
+                        .menu-tabs::-webkit-scrollbar { display: none; }
+                        @media (min-width: 769px) {
+                            .menu-tabs { justify-content: center !important; }
+                        }
+                        `}
+                    </style>
                     {Object.keys(menuData).map((key) => (
                         <button
                             key={key}

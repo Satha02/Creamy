@@ -15,29 +15,46 @@ const Hero = () => {
             <style>
                 {`
                 @media (max-width: 968px) {
+                    .hero {
+                        padding: 100px 0 40px !important;
+                        min-height: auto !important;
+                    }
                     .hero-grid {
                         grid-template-columns: 1fr !important;
                         text-align: center !important;
-                        gap: 3rem !important;
+                        gap: 2rem !important;
                     }
                     .hero-content-left {
                         text-align: center !important;
                         order: 2;
+                        margin-top: 1rem;
                     }
                     .hero-image-right {
                         order: 1;
-                        max-width: 500px;
+                        max-width: 320px;
                         margin: 0 auto;
                     }
                     .milkshake-popup {
-                        width: 150px !important;
-                        height: 180px !important;
-                        right: -10px !important;
-                        bottom: -10px !important;
+                        width: 120px !important;
+                        height: 150px !important;
+                        right: -5px !important;
+                        bottom: -5px !important;
                     }
                     .hero-buttons {
                         justify-content: center;
-                        flex-direction: column;
+                    }
+                    h1 {
+                        line-height: 1.1 !important;
+                        margin-bottom: 2rem !important;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .hero-image-right {
+                        max-width: 260px;
+                    }
+                    .milkshake-popup {
+                        width: 100px !important;
+                        height: 130px !important;
                     }
                 }
                 `}

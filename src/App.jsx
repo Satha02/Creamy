@@ -13,14 +13,14 @@ function App() {
         <Menu />
 
         {/* About/Location Section */}
-        <section id="about" style={{ padding: '120px 0', textAlign: 'center', background: '#130d0c' }}>
+        <section id="about" style={{ padding: 'clamp(60px, 10vw, 120px) 0', textAlign: 'center', background: '#130d0c' }}>
           <div className="container">
-            <h2 style={{ fontSize: '3rem', marginBottom: '4rem', textTransform: 'uppercase', fontWeight: '900' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', marginBottom: 'clamp(2rem, 5vw, 4rem)', textTransform: 'uppercase', fontWeight: '900' }}>
               The <span style={{ color: 'var(--accent)' }}>Experience</span>
             </h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', maxWidth: '1100px', margin: '0 auto' }}>
-              <div style={{ padding: '3rem', border: '1px solid var(--accent)', background: 'transparent', textAlign: 'left' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1100px', margin: '0 auto' }}>
+              <div style={{ padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--accent)', background: 'transparent', textAlign: 'left' }}>
                 <div style={{ color: 'var(--accent)', fontSize: '0.7rem', fontWeight: '700', letterSpacing: '3px', marginBottom: '1rem', textTransform: 'uppercase' }}>Milestone</div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', letterSpacing: '1px' }}>Celebrating 5 Years</h3>
                 <p style={{ fontSize: '0.95rem', marginBottom: '2rem', color: 'var(--text-dim)', lineHeight: '1.8' }}>
@@ -30,7 +30,7 @@ function App() {
                 <a href="#menu" style={{ color: 'var(--accent)', fontWeight: '700', textDecoration: 'none', fontSize: '0.8rem', letterSpacing: '1px' }} className="uppercase">View Specials →</a>
               </div>
 
-              <div style={{ padding: '3rem', background: 'rgba(255,255,255,0.02)', textAlign: 'left', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <div style={{ padding: 'clamp(1.5rem, 5vw, 3rem)', background: 'rgba(255,255,255,0.02)', textAlign: 'left', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <div style={{ color: 'var(--accent)', fontSize: '0.7rem', fontWeight: '700', letterSpacing: '3px', marginBottom: '1rem', textTransform: 'uppercase' }}>Locate Us</div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', letterSpacing: '1px' }}>Our Jaffna Coffee Shops</h3>
                 <p style={{ fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
