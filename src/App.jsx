@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import AnniversarySection from './components/AnniversarySection'
 import Menu from './components/Menu'
 import './App.css'
 
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <AnniversarySection />
         <Menu />
 
         {/* About/Location Section */}
