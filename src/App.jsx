@@ -86,9 +86,7 @@ function App() {
               Facebook
             </a>
             <span style={{ color: 'rgba(255,255,255,0.1)', display: 'inline-block' }}>|</span>
-            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: '700', letterSpacing: '1px' }}>Instagram</a>
-            <span style={{ color: 'rgba(255,255,255,0.1)', display: 'inline-block' }}>|</span>
-            <a href="#" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: '700', letterSpacing: '1px' }}>Twitter</a>
+            <a href="https://www.instagram.com/creamy_jaffna?igsh=MWQyZWpkcHZjYWs5Yg==" target="_blank" rel="noopener noreferrer" className="uppercase" style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: '700', letterSpacing: '1px' }}>Instagram</a>
           </div>
           <p style={{ color: '#444', fontSize: '0.65rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '2px', padding: '0 1rem' }}>
             &copy; 2026 Creamy Creation & Creamy Cafe. All rights reserved.
