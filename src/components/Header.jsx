@@ -25,7 +25,7 @@ const Header = () => {
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        const sections = ['home', 'anniversary', 'pongal-event', 'creations', 'menu', 'location', 'about'];
+        const sections = ['cafe-slider', 'home', 'anniversary', 'pongal-event', 'creations', 'menu', 'location', 'about'];
         sections.forEach(id => {
             const el = document.getElementById(id);
             if (el) observer.observe(el);
@@ -40,11 +40,12 @@ const Header = () => {
 
     const navLinks = [
         { name: 'Home', href: '#', id: 'home' },
+        { name: 'Ambience', href: '#cafe-slider', id: 'cafe-slider' },
         { name: 'Events', href: '#anniversary', id: 'anniversary' },
         { name: 'Creations', href: '#creations', id: 'creations' },
         { name: 'Menu', href: '#menu', id: 'menu' },
-        { name: 'Find Us', href: '#location', id: 'location' }, // Added 'Find Us' link
-        { name: 'About', href: '#about', id: 'about' } // Changed 'Visit Us' to 'About' for consistency with new structure
+        { name: 'Find Us', href: '#location', id: 'location' },
+        { name: 'About', href: '#about', id: 'about' }
     ];
 
     return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './components/Header'
+import CafeSlider from './components/CafeSlider'
 import Hero from './components/Hero'
 import AnniversarySection from './components/AnniversarySection'
 import PongalEvent from './components/PongalEvent'
@@ -13,6 +14,7 @@ function App() {
     <div className="app">
       <Header />
       <main>
+        <CafeSlider />
         <Hero />
         <AnniversarySection />
         <PongalEvent />
