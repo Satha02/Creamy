@@ -3,20 +3,48 @@ import React, { useState, useEffect } from 'react';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
+
+        const observerOptions = {
+            threshold: 0.3
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    let id = entry.target.id || 'home';
+                    if (id === 'pongal-event') id = 'anniversary'; // Map Pongal to Events nav item
+                    setActiveSection(id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const sections = ['home', 'anniversary', 'pongal-event', 'creations', 'menu', 'location', 'about'];
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
+        };
     }, []);
 
     const navLinks = [
-        { name: 'Home', href: '#' },
-        { name: 'Events', href: '#anniversary' },
-        { name: 'Menu', href: '#menu' },
-        { name: 'Visit Us', href: '#about' }
+        { name: 'Home', href: '#', id: 'home' },
+        { name: 'Events', href: '#anniversary', id: 'anniversary' },
+        { name: 'Creations', href: '#creations', id: 'creations' },
+        { name: 'Menu', href: '#menu', id: 'menu' },
+        { name: 'Find Us', href: '#location', id: 'location' }, // Added 'Find Us' link
+        { name: 'About', href: '#about', id: 'about' } // Changed 'Visit Us' to 'About' for consistency with new structure
     ];
 
     return (
@@ -42,15 +70,34 @@ const Header = () => {
                     Creamy <span style={{ color: 'var(--accent)' }}>Creations</span>
                 </div>
 
-                {/* Desktop Nav */}
                 <nav className="desktop-nav" style={{ display: 'flex', gap: '3rem' }}>
                     {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} className="uppercase" style={{
-                            fontSize: '0.8rem',
-                            fontWeight: '600',
-                            color: link.name === 'Home' ? 'var(--accent)' : '#fff',
-                            transition: 'color 0.3s'
-                        }}>{link.name}</a>
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className="uppercase"
+                            style={{
+                                fontSize: '0.75rem',
+                                fontWeight: '700',
+                                color: activeSection === link.id ? 'var(--accent)' : '#fff',
+                                transition: 'all 0.3s',
+                                position: 'relative',
+                                letterSpacing: '2px'
+                            }}
+                        >
+                            {link.name}
+                            {activeSection === link.id && (
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '-8px',
+                                    left: '0',
+                                    width: '100%',
+                                    height: '2px',
+                                    background: 'var(--accent)',
+                                    borderRadius: '10px'
+                                }}></div>
+                            )}
+                        </a>
                     ))}
                 </nav>
 
@@ -120,7 +167,9 @@ const Header = () => {
                                 fontWeight: '800',
                                 textTransform: 'uppercase',
                                 letterSpacing: '4px',
-                                color: isMenuOpen ? '#fff' : 'transparent'
+                                color: activeSection === link.id ? 'var(--accent)' : '#fff',
+                                opacity: isMenuOpen ? '1' : '0',
+                                transition: 'all 0.4s ease'
                             }}
                         >
                             {link.name}

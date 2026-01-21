@@ -4,7 +4,7 @@ import milkshakeHero from '../assets/milkshake_hero.png';
 
 const Hero = () => {
     return (
-        <section className="hero" style={{
+        <section id="home" className="hero" style={{
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
